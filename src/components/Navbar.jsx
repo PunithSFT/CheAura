@@ -7,7 +7,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Effect for handling scroll state
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 100); 
@@ -40,7 +39,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-end items-center h-14">
           
-          {/* Desktop Navigation (Hidden on mobile) - Kept as is */}
+          {/* Desktop Navigation */}
           <div 
             className={`
               hidden md:flex items-center p-1 rounded-full 
@@ -60,16 +59,18 @@ const Navbar = () => {
                     text-[12px] tracking-widest uppercase px-4 py-2 mx-1 rounded-full 
                     transition-all duration-300 font-medium
                     ${scrolled 
-                        ? 'text-gray-900 hover:bg-black/10'
+                        ? 'text-black hover:bg-black/10'
                         : 'text-white hover:bg-white/20' 
                     }
                     ${isActive 
+                        // FIX APPLIED HERE:
                         ? scrolled 
-                            ? 'bg-black text-white hover:bg-black'
-                            : 'bg-white text-black hover:bg-white' 
+                            ? 'bg-black text-white hover:bg-black' // Scrolled: Black background, WHITE text (OK)
+                            : 'bg-white text-gray-950 hover:bg-white' // NOT Scrolled: White background, BLACK text (REQUIRED for contrast on white pill)
                         : ''
                     }
                   `}
+                  onClick={handleLinkClick}
                 >
                   {item.name}
                 </Link>
