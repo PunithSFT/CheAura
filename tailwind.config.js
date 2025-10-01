@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    // This is the most critical part for a static site:
     "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
+    // This covers any JavaScript/framework files in a src folder:
+    "./src/**/*.{js,jsx,ts,tsx,html}", 
   ],
   theme: {
     extend: {

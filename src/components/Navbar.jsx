@@ -65,7 +65,7 @@ const Navbar = () => {
                     ${isActive 
     ? scrolled 
         ? 'bg-black text-white hover:bg-black' 
-        : 'bg-white text-gray-950 hover:bg-white' // This color is getting overwritten
+        : 'bg-white text-black hover:bg-white' // This color is getting overwritten
     : ''
 }
                   `}
