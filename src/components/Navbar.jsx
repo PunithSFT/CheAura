@@ -63,12 +63,11 @@ const Navbar = () => {
                         : 'text-white hover:bg-white/20' 
                     }
                     ${isActive 
-                        // FIX APPLIED HERE:
-                        ? scrolled 
-                            ? 'bg-black text-white hover:bg-black' // Scrolled: Black background, WHITE text (OK)
-                            : 'bg-white text-gray-950 hover:bg-white' // NOT Scrolled: White background, BLACK text (REQUIRED for contrast on white pill)
-                        : ''
-                    }
+    ? scrolled 
+        ? 'bg-black text-white hover:bg-black' 
+        : 'bg-white text-gray-950 hover:bg-white' // This color is getting overwritten
+    : ''
+}
                   `}
                   onClick={handleLinkClick}
                 >
