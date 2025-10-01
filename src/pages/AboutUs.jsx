@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
@@ -131,7 +132,9 @@ const AboutUs = () => {
           <p className="text-xs md:text-sm max-w-xl opacity-90 mb-4">
             Your next adventure is just a click away. Explore our carefully curated travel packages and find the journey that's perfect for you.
           </p>
-          <button className="px-8 py-2 md:px-10 border text-sm bg-transparent text-white hover:bg-gray-300/40 transition duration-300">Explore</button>
+          <Link to="/packages">
+            <button className="px-8 py-2 md:px-10 border text-sm bg-transparent text-white hover:bg-gray-300/40 transition duration-300">Explore</button>
+          </Link>
         </div>
       </section>
     </div>

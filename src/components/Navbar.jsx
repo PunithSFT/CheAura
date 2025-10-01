@@ -55,21 +55,19 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`
-                    text-[12px] tracking-widest uppercase px-4 py-2 mx-1 rounded-full 
-                    transition-all duration-300 font-medium
-                    ${scrolled 
-                        ? 'text-black hover:bg-black/10'
-                        : 'text-white hover:bg-white/20' 
-                    }
-                    ${isActive 
-    ? scrolled 
-        ? 'bg-black text-white hover:bg-black' 
-        : 'bg-white text-black hover:bg-white' // This color is getting overwritten
-    : ''
-}
-                  `}
-                  onClick={handleLinkClick}
+                                      className={`
+                                        text-[12px] tracking-widest uppercase px-4 py-2 mx-1 rounded-full 
+                                        transition-all duration-300 font-medium
+                                        ${
+                                          isActive
+                                            ? scrolled
+                                              ? 'bg-black text-white hover:bg-black'
+                                              : 'bg-white text-black hover:bg-white'
+                                            : scrolled
+                                              ? 'text-black hover:bg-black/10'
+                                              : 'text-white hover:bg-white/20'
+                                        }
+                                      `}                  onClick={handleLinkClick}
                 >
                   {item.name}
                 </Link>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react'; // Import Search icon for the button
 
 const Home = () => {
@@ -139,9 +140,11 @@ const Home = () => {
                     <p className="text-sm mb-10 font-thin font-montserrat max-w-sm mx-auto">
                         Book your unforgettable adventure today and discover breathtaking destinations, unique cultures, and experiences that last a lifetime.
                     </p>
-                    <button className="backdrop-blur-lg text-white py-3 px-10 rounded-full text-sm font-thin hover:bg-primary-green/90 transition duration-300">
+                    <Link to="/packages">
+                          <button className="backdrop-blur-lg text-white py-3 px-10 rounded-full text-sm font-thin hover:bg-primary-green/90 transition duration-300">
                         BOOK NOW
                     </button>
+                    </Link>
                 </div>
             </section>
         </div>
